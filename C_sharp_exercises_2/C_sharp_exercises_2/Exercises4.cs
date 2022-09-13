@@ -1,9 +1,16 @@
-﻿using System;
+﻿using C_sharp_exercises_2;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
+//Exercise 4:
+//Create a class Book which should have author, title and createdDate properties.
+//Create 10 instances of Book class.
+//1.Filter latest 5 created Books.
+//2. Group the books which authors are same person
+//3. Find Books which title starts with A letter
 namespace C_sharp_exercises_2
 {
     class Book
@@ -20,10 +27,9 @@ namespace C_sharp_exercises_2
     }
     internal class Exercises4
     {
-        public void libraryFilter()
+        public void filteringtoNameAndTitle()
         {
             IList<Book> bookList = new List<Book>() { };
-
             DateTime dt = DateTime.Now;
 
             var Book1 = new Book("Max", "ANgular", dt);
@@ -53,12 +59,9 @@ namespace C_sharp_exercises_2
                         where cust.title.Substring(0, 1).ToLower() == "a"
                         where bookList.Where(x => x.author == cust.author).Select(z => z).Count() > 1
                         select cust;
-
-
             var result = query.GroupBy(
                 p => p.author,
                 (key, g) => new { author = key });
-
             foreach (var item in result)
             {
                 Console.WriteLine(item.author);
