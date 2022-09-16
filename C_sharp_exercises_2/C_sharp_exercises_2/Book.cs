@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace C_sharp_exercises_2
+﻿namespace C_sharp_exercises_2
 {
-      public  class Book
-        {
-        public string author { get; set; }
-        public string title { get; set; }
-        public string BookDta { get; set; }
+    public class Book
+    {
+        public string Author { get; set; }
+        public string Title { get; set; }
+        public string BookData { get; set; }
         public Book(string name, string title, string BookDta)
-            {
-                this.author = name;
-                this.title = title;
-                this.BookDta = BookDta;
-            }
+        {
+            this.Author = name;
+            this.Title = title;
+            this.BookData = BookDta;
         }
+    }
 }

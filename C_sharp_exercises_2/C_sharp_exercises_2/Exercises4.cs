@@ -1,12 +1,7 @@
-﻿using C_sharp_exercises_2;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 //Exercise 4:
 //Create a class Book which should have author, title and createdDate properties.
 //Create 10 instances of Book class.
@@ -41,15 +36,15 @@ namespace C_sharp_exercises_2
 
             for (int i = 0; i < bookList.Count; i++)
             {
-                Console.WriteLine(bookList[i].BookDta);
+                Console.WriteLine(bookList[i].BookData);
             }
             var query =
                         from book in bookList
-                        where book.title.Substring(0, 1).ToLower() == "a"
-                        where bookList.Where(x => x.author == book.author).Select(z => z).Count() > 1
+                        where book.Title.Substring(0, 1).ToLower() == "a"
+                        where bookList.Where(x => x.Author == book.Author).Select(z => z).Count() > 1
                         select book;
             var result = query.GroupBy(
-                p => p.author,
+                p => p.Author,
                 (key, index) => new { author = key });
             foreach (var item in result)
             {

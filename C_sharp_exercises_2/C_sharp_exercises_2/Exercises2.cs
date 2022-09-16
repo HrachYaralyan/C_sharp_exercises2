@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 //Exercise 2:
 //Write a method in C# to display numbers, multiplication of number with frequency and frequency of a number of giving array.
 namespace C_sharp_exercises_2

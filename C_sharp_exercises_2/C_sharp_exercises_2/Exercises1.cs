@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 //Exercise 1:
 //Write a method in C# to display the characters and frequency of character from giving string
 namespace C_sharp_exercises_2

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 //Exercise 3:
 //Write a method in C# to create a list of random numbers with random list length and display the numbers greater than 45 as output.
 namespace C_sharp_exercises_2
