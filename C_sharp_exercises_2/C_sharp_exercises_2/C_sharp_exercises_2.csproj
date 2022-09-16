@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Book.cs" />
+    <Compile Include="Exercises1.cs" />
+    <Compile Include="Exercises2.cs" />
+    <Compile Include="Exercises3.cs" />
+    <Compile Include="Exercises4.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
