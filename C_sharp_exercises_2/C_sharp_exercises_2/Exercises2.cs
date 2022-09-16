@@ -11,7 +11,7 @@ namespace C_sharp_exercises_2
     {
         public void countingFrequencyAndMultiplication()
         {
-            IList<int> listNumbers = new List<int>() { };
+            var listNumbers = new List<int>() { };
             Dictionary<int, int> NumbersCount = new Dictionary<int, int>();
             Console.Write("Enter your Number: ");
             int inputNUmber = int.Parse(Console.ReadLine());
