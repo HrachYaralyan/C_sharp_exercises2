@@ -11,8 +11,8 @@ namespace C_sharp_exercises_2
     {
         public void countingFrequencyAndMultiplication()
         {
-            IList<int> listNumbers = new List<int>() { };
-            Dictionary<int, int> NumbersCount = new Dictionary<int, int>();
+            var listNumbers = new List<int>() { };
+            Dictionary<int, int> numbersCount = new Dictionary<int, int>();
             Console.Write("Enter your Number: ");
             int inputNUmber = int.Parse(Console.ReadLine());
             for (int z = 0; z < inputNUmber; z++)
@@ -34,16 +34,15 @@ namespace C_sharp_exercises_2
             }
             for (int i = 0; i < listNumbers.Count; i++)
             {
-                if (!NumbersCount.ContainsKey(listNumbers[i]))
+                if (!numbersCount.ContainsKey(listNumbers[i]))
                 {
-                    NumbersCount.Add(listNumbers[i], i);
+                    numbersCount.Add(listNumbers[i], i);
 
                     int countNum = listNumbers.Where(x => (x == listNumbers[i])).Count();
 
                     Console.WriteLine($" Number :  {listNumbers[i]} | Number*Frequency :   {countNum * listNumbers[i]} | Count :{countNum} ");
                 }
             }
-
         }
     }
 }

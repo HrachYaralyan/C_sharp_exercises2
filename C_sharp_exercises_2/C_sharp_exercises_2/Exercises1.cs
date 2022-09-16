@@ -13,17 +13,16 @@ namespace C_sharp_exercises_2
         {
             Console.Write("input text:\t");
             string inputstring = Console.ReadLine();
-            Dictionary<string, int> fruitsDictonary = new Dictionary<string, int>();
+            Dictionary<string, int> letterDictonary = new Dictionary<string, int>();
             for (int i = 0; i < inputstring.Length; i++)
             {
-                if (!fruitsDictonary.ContainsKey($"{inputstring[i]}"))
+                if (!letterDictonary.ContainsKey($"{inputstring[i]}"))
                 {
-                    int thisChar = inputstring.Where(x => (x == inputstring[i])).Count();
-                    fruitsDictonary.Add($"{inputstring[i]}", thisChar);
-                    Console.WriteLine("Character " + inputstring[i] + ": " + thisChar + " times");
+                    int currentChar = inputstring.Where(x => (x == inputstring[i])).Count();
+                    letterDictonary.Add($"{inputstring[i]}", currentChar);
+                    Console.WriteLine("Character " + inputstring[i] + ": " + currentChar + " times");
                 }
             }
         }
-
     }
 }

@@ -1,9 +1,11 @@
 ﻿using C_sharp_exercises_2;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 //Exercise 4:
 //Create a class Book which should have author, title and createdDate properties.
@@ -13,55 +15,42 @@ using System.Threading.Tasks;
 //3. Find Books which title starts with A letter
 namespace C_sharp_exercises_2
 {
-    class Book
-    {
-        public string author;
-        public string title;
-        public DateTime BookDta;
-        public Book(string name, string title, DateTime BookDta)
-        {
-            this.author = name;
-            this.title = title;
-            this.BookDta = BookDta;
-        }
-    }
     internal class Exercises4
     {
+        public string RetD()
+        {
+            var dt = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff",
+                                            CultureInfo.InvariantCulture);
+            return dt;
+        }
         public void filteringtoNameAndTitle()
         {
-            IList<Book> bookList = new List<Book>() { };
+            var bookList = new List<Book>() { };
             DateTime dt = DateTime.Now;
 
-            var Book1 = new Book("Max", "ANgular", dt);
-            var Book2 = new Book("Raffaello", "css", dt);
-            var Book3 = new Book("Michelangelo", "js", dt);
-            var Book4 = new Book("Doremi", "c++", dt);
-            var Book5 = new Book("Fasollya", "react", dt);
-            var Book6 = new Book("Max", "ANgular", dt);
-            var Book7 = new Book("Samuel", "css", dt);
-            var Book8 = new Book("Joe", "Alchimic", dt);
-            var Book9 = new Book("Harry", "js", dt);
-            var Book10 = new Book("Bob", "css", dt);
+            bookList.Add(new Book("Max", "ANgular", RetD()));
+            bookList.Add(new Book("Raffaello", "css", RetD()));
+            bookList.Add(new Book("Michelangelo", "js", RetD()));
+            bookList.Add(new Book("Doremi", "c++", RetD()));
+            bookList.Add(new Book("Fasollya", "react", RetD()));
+            bookList.Add(new Book("Max", "ANgular", RetD()));
+            bookList.Add(new Book("Samuel", "css", RetD()));
+            bookList.Add(new Book("Joe", "Alchimic", RetD()));
+            bookList.Add(new Book("Harry", "js", RetD()));
+            bookList.Add(new Book("Bob", "css", RetD()));
 
-            bookList.Add(Book1);
-            bookList.Add(Book2);
-            bookList.Add(Book3);
-            bookList.Add(Book4);
-            bookList.Add(Book5);
-            bookList.Add(Book6);
-            bookList.Add(Book7);
-            bookList.Add(Book8);
-            bookList.Add(Book9);
-            bookList.Add(Book10);
-
+            for (int i = 0; i < bookList.Count; i++)
+            {
+                Console.WriteLine(bookList[i].BookDta);
+            }
             var query =
-                        from cust in bookList
-                        where cust.title.Substring(0, 1).ToLower() == "a"
-                        where bookList.Where(x => x.author == cust.author).Select(z => z).Count() > 1
-                        select cust;
+                        from book in bookList
+                        where book.title.Substring(0, 1).ToLower() == "a"
+                        where bookList.Where(x => x.author == book.author).Select(z => z).Count() > 1
+                        select book;
             var result = query.GroupBy(
                 p => p.author,
-                (key, g) => new { author = key });
+                (key, index) => new { author = key });
             foreach (var item in result)
             {
                 Console.WriteLine(item.author);
